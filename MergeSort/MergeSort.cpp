@@ -35,17 +35,17 @@ void Merge(int *A, int begin, int mid, int end)
 	int l = begin, p = mid + 1;
 
 	for (int i = begin; i <= end; i++) {
-		if (l > mid)      //ëåâàÿ ÷àñòü äîøëà ëè äî êîíöà
+		if (l > mid)      //Ã«Ã¥Ã¢Ã Ã¿ Ã·Ã Ã±Ã²Ã¼ Ã¤Ã®Ã¸Ã«Ã  Ã«Ã¨ Ã¤Ã® ÃªÃ®Ã­Ã¶Ã 
 		{
 			Arr[lArr++] = A[p++];
 			//printf("%i ", Arr[lArr-1]);
 		}
-		else if (p > end)   //ïðàâàÿ ÷àñòü äîøëà ëè äî êîíöà
+		else if (p > end)   //Ã¯Ã°Ã Ã¢Ã Ã¿ Ã·Ã Ã±Ã²Ã¼ Ã¤Ã®Ã¸Ã«Ã  Ã«Ã¨ Ã¤Ã® ÃªÃ®Ã­Ã¶Ã 
 		{
 			Arr[lArr++] = A[l++];
 			//printf("%i ", Arr[lArr-1]);
 		}
-		else if (A[l] < A[p])     //ñðàâíèâàåì ýëåìåíòû ïðàâîé è ëåâîé ÷àñòè
+		else if (A[l] < A[p])     //Ã±Ã°Ã Ã¢Ã­Ã¨Ã¢Ã Ã¥Ã¬ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¯Ã°Ã Ã¢Ã®Ã© Ã¨ Ã«Ã¥Ã¢Ã®Ã© Ã·Ã Ã±Ã²Ã¨
 		{
 			Arr[lArr++] = A[l++];
 			//printf("%i ", Arr[lArr-1]);
@@ -56,32 +56,13 @@ void Merge(int *A, int begin, int mid, int end)
 			//printf("%i ", Arr[lArr-1]);
 		}
 	}
-	for (int i = 0; i< lArr; i++) //ôîðìèðóåì îòñîðòèðîâàííûé ìàññèâ
+	for (int i = 0; i< lArr; i++) //Ã´Ã®Ã°Ã¬Ã¨Ã°Ã³Ã¥Ã¬ Ã®Ã²Ã±Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© Ã¬Ã Ã±Ã±Ã¨Ã¢
 		A[begin++] = Arr[i];
 	//printf("\n");
 		free(Arr);
 }
 
-void test(int *A, int *Asorted)
-{
-	int wrong_ind = 0;
-	bool correct_result = true;
-	MergeSort(A, 0, n -1);
-	for (int i = 0; i < n; ++i)
-	{
-		if (A[i] != Asorted[i])
-		{
-			correct_result = false;
-			wrong_ind = i;
-			break;
-		}
-	}
-	if (correct_result)
-	{
-		printf("Error and ind %i, got %im expected %i", wrong_ind, A[wrong_ind], Asorted[wrong_ind]);
-		
-	}
-}
+
 
 void main()
 {
